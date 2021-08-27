@@ -9,6 +9,7 @@ export const CompleteTodos = (props) => {
     setCompleteTodos
   } = props;
 
+  // イベント
   const onClickReturn = (index) => {
     const newCompleteTodos = [...completeTodos];
     newCompleteTodos.splice(index, 1);
@@ -18,6 +19,7 @@ export const CompleteTodos = (props) => {
     setIncompleteTodos(newIncompleteTodos);
   };
 
+  // 表示
   return (
     <div className="complete-area">
       <p className="title">完了のTODO</p>

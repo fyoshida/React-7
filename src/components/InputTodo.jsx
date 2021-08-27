@@ -14,6 +14,7 @@ export const InputTodo = (props) => {
     setTodoText("");
   };
 
+  // 表示
   return (
     <div className="input-area">
       <input

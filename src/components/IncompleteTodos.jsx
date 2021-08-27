@@ -9,6 +9,7 @@ export const IncompleteTodos = (props) => {
     setCompleteTodos
   } = props;
 
+  // イベント
   const onClickDelete = (index) => {
     const newTodos = [...incompleteTodos];
     newTodos.splice(index, 1);
@@ -24,6 +25,7 @@ export const IncompleteTodos = (props) => {
     setCompleteTodos(newCompleteTodos);
   };
 
+  // 表示
   return (
     <div className="incomplete-area">
       <p className="title">未完了のTODO</p>
