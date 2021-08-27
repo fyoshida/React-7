@@ -2,13 +2,33 @@ import React from "react";
 
 export const IncompleteTodos = (props) => {
   // 引数
-  const { todos, onClickComplete, onClickDelete } = props;
+  const {
+    incompleteTodos,
+    completeTodos,
+    setIncompleteTodos,
+    setCompleteTodos
+  } = props;
+
+  const onClickDelete = (index) => {
+    const newTodos = [...incompleteTodos];
+    newTodos.splice(index, 1);
+    setIncompleteTodos(newTodos);
+  };
+
+  const onClickComplete = (index) => {
+    const newIncompleteTodos = [...incompleteTodos];
+    newIncompleteTodos.splice(index, 1);
+    setIncompleteTodos(newIncompleteTodos);
+
+    const newCompleteTodos = [...completeTodos, incompleteTodos[index]];
+    setCompleteTodos(newCompleteTodos);
+  };
 
   return (
     <div className="incomplete-area">
       <p className="title">未完了のTODO</p>
       <ul>
-        {todos.map((todo, index) => {
+        {incompleteTodos.map((todo, index) => {
           return (
             <div key="{todo}" className="list-row">
               <li>{todo}</li>
