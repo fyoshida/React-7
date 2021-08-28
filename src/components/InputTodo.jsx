@@ -1,5 +1,14 @@
 import React from "react";
 
+const style = {
+  backgroundColor: "#c1ffff",
+  width: "400px",
+  height: "30px",
+  padding: "8px",
+  margin: "8px",
+  borderRadius: "8px"
+};
+
 export const InputTodo = (props) => {
   // 引数
   const { todoText, setTodoText, incompleteTodos, setIncompleteTodos } = props;
@@ -16,7 +25,7 @@ export const InputTodo = (props) => {
 
   // 表示
   return (
-    <div className="input-area">
+    <div style={style}>
       <input
         placeholder="TODOを入力"
         value={todoText}
