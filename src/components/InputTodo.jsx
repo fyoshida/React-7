@@ -11,7 +11,13 @@ const style = {
 
 export const InputTodo = (props) => {
   // 引数
-  const { todoText, setTodoText, incompleteTodos, setIncompleteTodos } = props;
+  const {
+    todoText,
+    setTodoText,
+    incompleteTodos,
+    setIncompleteTodos,
+    disabled
+  } = props;
 
   // イベント
   const onChangeTodoText = (event) => setTodoText(event.target.value);
@@ -27,11 +33,14 @@ export const InputTodo = (props) => {
   return (
     <div style={style}>
       <input
+        disabled={disabled}
         placeholder="TODOを入力"
         value={todoText}
         onChange={onChangeTodoText}
       />
-      <button onClick={onClickAdd}>追加</button>
+      <button disabled={disabled} onClick={onClickAdd}>
+        追加
+      </button>
     </div>
   );
 };

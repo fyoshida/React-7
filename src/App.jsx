@@ -17,7 +17,13 @@ export const App = () => {
         setTodoText={setTodoText}
         incompleteTodos={incompleteTodos}
         setIncompleteTodos={setIncompleteTodos}
+        disabled={incompleteTodos.length >= 5}
       />
+      {incompleteTodos.length >= 5 && (
+        <p style={{ color: "red" }}>
+          登録できるtodoは5個までだよ～。消化しろ～
+        </p>
+      )}
       <IncompleteTodos
         incompleteTodos={incompleteTodos}
         completeTodos={completeTodos}
